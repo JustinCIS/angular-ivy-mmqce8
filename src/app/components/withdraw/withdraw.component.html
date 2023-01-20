@@ -1,0 +1,75 @@
+<form [formGroup]="withdrawForm" (ngSubmit)="makeWithdrawal()">
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">$100</h4>
+        </div>
+        <div class="card-body quantity">
+          <input type="number" name="hundred" formControlName="hundred" min="0" max="10" step="1" value="0" onkeypress="if (this.value.length >= 2) return false;">
+          <p class="fs-5" [ngClass]="hundredsMessage.includes('Dispensed') ? 'text-success' : 'text-danger'" style="white-space: pre-line">{{hundredsMessage}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">$50</h4>
+        </div>
+        <div class="card-body quantity" style="text-align:center">
+          <input type="number" name="fifty" formControlName="fifty" min="0" max="10" step="1" value="0" onkeypress="if (this.value.length >= 2) return false;">
+          <p class="fs-5" [ngClass]="fiftysMessage.includes('Dispensed') ? 'text-success' : 'text-danger'" style="white-space: pre-line">{{fiftysMessage}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">$20</h4>
+        </div>
+        <div class="card-body quantity">
+          <input type="number" name="twenty" formControlName="twenty" min="0" max="10" step="1" value="0" onkeypress="if (this.value.length >= 2) return false;">
+          <p class="fs-5" [ngClass]="twentysMessage.includes('Dispensed') ? 'text-success' : 'text-danger'" style="white-space: pre-line">{{twentysMessage}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">$10</h4>
+        </div>
+        <div class="card-body quantity">
+          <input type="number" name="ten" formControlName="ten" min="0" max="10" step="1" value="0" onkeypress="if (this.value.length >= 2) return false;">
+          <p class="fs-5" [ngClass]="tensMessage.includes('Dispensed') ? 'text-success' : 'text-danger'" style="white-space: pre-line">{{tensMessage}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">$5</h4>
+        </div>
+        <div class="card-body quantity">
+          <input type="number" name="five" formControlName="five" min="0" max="10" step="1" value="0" onkeypress="if (this.value.length >= 2) return false;">
+          <p class="fs-5" [ngClass]="fivesMessage.includes('Dispensed') ? 'text-success' : 'text-danger'" style="white-space: pre-line">{{fivesMessage}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm border-primary">
+        <div class="card-header py-3 text-bg-primary border-primary">
+          <h4 class="my-0 fw-normal">$1</h4>
+        </div>
+        <div class="card-body quantity">
+          <input type="number" name="one" formControlName="one" min="0" max="10" step="1" value="0" onkeypress="if (this.value.length >= 2) return false;">
+          <p class="fs-5" [ngClass]="onesMessage.includes('Dispensed') ? 'text-success' : 'text-danger'" style="white-space: pre-line">{{onesMessage}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+    <button type="submit" [routerLink]="['/withdraw']" class="w-100 btn btn-lg btn-primary">Withdraw</button>
+  </div>
+</form>

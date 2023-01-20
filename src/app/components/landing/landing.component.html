@@ -1,0 +1,35 @@
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Overview</h4>
+      </div>
+      <div class="card-body">
+        <p class="fs-5 text-muted">View the transaction history, and a summary of bills currently in the ATM.</p>
+        <button type="button" [routerLink]="['/overview']" class="w-100 btn btn-lg btn-outline-primary">Go</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+      <div class="card-header py-3 text-bg-primary border-primary">
+        <h4 class="my-0 fw-normal">Withdraw</h4>
+      </div>
+      <div class="card-body">
+        <p class="fs-5 text-muted">Dispense funds in denominations of $100, $50, $20, $10, $5 and $1 bills.</p>
+        <button type="button" [routerLink]="['/withdraw']" class="w-100 btn btn-lg btn-primary">Go</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Restock</h4>
+      </div>
+      <div class="card-body">
+        <p class="fs-5 text-muted">Need to deposit funds back?  Perform that action here.</p>
+        <button type="button" [routerLink]="['/restock']" class="w-100 btn btn-lg btn-outline-primary">Go</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div *ngFor="let transactions of (atmService.allTransactions$ | async); let i = index;" class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Transaction #{{i+1}}</h4>
+      </div>
+      <div class="card-body">
+        <ul *ngFor="let transaction of transactions; let j = index">
+          <li *ngIf="j != transactions.length - 1" [ngClass]="transaction.includes('Dispensed') ? 'text-success' : 'text-danger'">{{transaction}}</li>
+          <li *ngIf="j == transactions.length - 1" class="dateDisplay text-primary">{{transaction}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="p-3 pb-md-4 mx-auto text-center text-warning" *ngIf="(atmService.allTransactions$ | async)?.length === 0">There have been no transactions made</div>
+</div>
